@@ -1,72 +1,43 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# OOP school library
 
-# Project Name
+## Description
 
-> Description the project.
-
+> In this project we learned the basic concepts of the object oriented programming language using Ruby. We learned how to create classes, objects, and methods. we learned inheritance, and how to use modules, encapsulation,abstraction and polymorphism.
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
+- Ruby
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+To get the content of this project locally you need to run these commands in your terminal.
+Before starting the steps below, be sure you have [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/).
 
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-### Setup
-
-### Install
-
-### Usage
-
-### Run tests
-
-### Deployment
-
-
+1. Download the `Zip` or clone it with `git clone https://github.com/mwafrika/OOP_School_Iibrary.git`
+2. `cd OOP_School_Iibrary`
+3. Run: `bundle install`
 
 ## Authors
 
-👤 **Author1**
+👤 **Mwafrika Josue**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@mwafrika](https://github.com/mwafrika)
+- Twitter: [@mwafrika](@mwafrikamufung1)
+- LinkedIn: [Mwafrika Mufungizi](https://www.linkedin.com/in/mwafrika-mufungizi/)
 
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/mwafrika/OOP_School_Iibrary.git/issues).
 
 ## Show your support
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
+## Acknowledgements
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Thanks to everyone who will get time to check this project especially to code reviewers.
 
 ## 📝 License
 
