@@ -15,6 +15,7 @@ Before starting the steps below, be sure you have [Git](https://www.linode.com/d
 
 1. Download the `Zip` or clone it with `git clone https://github.com/mwafrika/OOP_School_Iibrary.git`
 2. `cd OOP_School_Iibrary`
+3. Run: `bundle install`
 
 ## Authors
 

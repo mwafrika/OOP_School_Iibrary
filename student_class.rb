@@ -1,8 +1,8 @@
-require './person_class'
+require_relative 'person_class'
 
 class Student < Person
-  def initialize(classroom, name = 'Unknown', parent_permission: true)
-    super(12, name, parent_permission)
+  def initialize(age, classroom, name = 'Unknown', parent_permission: true)
+    super(age, name, parent_permission)
     @classroom = classroom
   end
 
@@ -10,7 +10,3 @@ class Student < Person
     "¯\(ツ)/¯"
   end
 end
-
-# testing
-play = Student.new('classroom 1')
-print play.play_hooky

@@ -1,8 +1,8 @@
-require './person_class'
+require_relative 'person_class'
 
 class Teacher < Person
-  def initialize(specialization, name = 'Unknown', parent_permission: true)
-    super(30, name, parent_permission)
+  def initialize(age, specialization, name = 'Unknown', parent_permission: true)
+    super(age, name, parent_permission)
     @specialization = specialization
   end
 
@@ -10,7 +10,3 @@ class Teacher < Person
     true
   end
 end
-
-# testing
-permission = Teacher.new('Computer science')
-print permission.can_use_services?
