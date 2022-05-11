@@ -1,4 +1,6 @@
-class Person
+require_relative 'nameable'
+
+class Person < Nameable
   attr_accessor :name, :age
   attr_reader :id
 
@@ -7,10 +9,15 @@ class Person
     @age = age
     @name = name
     @parent_permission = parent_permission
+    super()
   end
 
   def can_use_services?
     return true if of_age? || @parent_permission
+  end
+
+  def correct_name
+    @name
   end
 
   private
@@ -19,3 +26,6 @@ class Person
     @age >= 18
   end
 end
+
+person = Person.new(22, 'maximilianus')
+print person.correct_name
