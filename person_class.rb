@@ -1,3 +1,4 @@
+require_relative 'rental'
 require_relative 'nameable'
 
 class Person < Nameable
@@ -25,7 +26,11 @@ class Person < Nameable
   def of_age?
     @age >= 18
   end
+
+  def add_rental(date, book)
+    Rental.new(date, book, self)
+  end
 end
 
-person = Person.new(22, 'maximilianus')
-print person.correct_name
+# person = Person.new(12, 'mmmmmmm')
+# puts person.correct_name
