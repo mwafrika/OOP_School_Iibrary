@@ -1,0 +1,8 @@
+require './classroom'
+require './student_class'
+require './decorator'
+require './trimmer_decorator'
+require './nameable'
+require './person_class'
+require './capitalize_decorator'
+require './teacher_class'
