@@ -6,3 +6,5 @@ require './nameable'
 require './person_class'
 require './capitalize_decorator'
 require './teacher_class'
+
+print 'Hello Mwafrika'
