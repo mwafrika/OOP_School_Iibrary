@@ -1,3 +1,4 @@
+# rubocop:disable Style/CyclomaticComplexity
 require './book'
 require './person_class'
 require './teacher_class'
@@ -171,3 +172,4 @@ def main
 end
 
 main
+# rubocop:enable Style/CyclomaticComplexity
