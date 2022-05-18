@@ -18,8 +18,7 @@ class Library
       print 'No books in library'
       return
     end
-    print "Books: #{@books[0]}\n"
-    @books.each { |book| puts "Title: #{book.title}, Author: #{book.author}\n" }
+    @books.collect { |book| puts "Title: #{book[:title]}, Author: #{book[:author]}" }
   end
 
   def create_book
@@ -40,9 +39,7 @@ class Library
       puts 'Your Library is empty'
       return
     end
-    @people.each do |person|
-      print "[#{person.class.name}] Name: #{person.name.capitalize}, ID: #{person.id}, Age: #{person.age}\n"
-    end
+    @people.collect { |person| puts "Name: #{person[:name]}, ID: #{person[:id]}, Age: #{person[:age]}\n" }
   end
 
   def create_person
@@ -64,7 +61,8 @@ class Library
 
       student = Student.new(age: age, classroom: classroom, name: name, parent_permission: parent_permission)
       # @people.push(student)
-      @people << { Age: student.age, Classroom: student.classroom, Name: student.name }
+      print student.class
+      @people << { age: student.age, classroom: student.classroom, name: student.name, id: student.id }
       save_teacher = JSON.generate(@people)
       File.write('./people.json', save_teacher.to_s)
       puts "Person created successfuly\n"
@@ -78,7 +76,7 @@ class Library
 
       teacher = Teacher.new(age: age, specialization: specialization, name: name)
       # @people.push(teacher)
-      @people << { Age: teacher.age, Name: teacher.name}
+      @people << { age: teacher.age, name: teacher.name, id: teacher.id }
       save_teacher = JSON.generate(@people)
       File.write('./people.json', save_teacher.to_s)
       puts "Person created successfuly\n"
@@ -96,7 +94,8 @@ class Library
     end
     puts 'Select a book by number'
     @books.each_with_index do |book, i|
-      print "#{i}) Title: #{book.title}, Author: #{book.author}\n"
+      print "#{i}) Title: #{book[:title]}, Author: #{book[:author]}\n"
+      print book.class
     end
 
     book_index = gets.chomp.to_i
@@ -104,7 +103,7 @@ class Library
 
     puts 'Select a person by number'
     @people.each_with_index do |person, i|
-      print "#{i}) [#{person.class}] Name: #{person.name.capitalize}, ID: #{person.id}, Age: #{person.age}\n"
+      print "#{i}) [#{person.class}] Name: #{person[:name]}, ID: #{person[:id]}, Age: #{person[:age]}\n"
     end
 
     person_index = gets.chomp.to_i
@@ -116,9 +115,9 @@ class Library
 
     rental = Rental.new(date: date, person: person, book: book)
     # @rentals << rental
-    @rentals << { Date: rental.date, Person: rental.person.name, Book: rental.book.title }
-      save_rental = JSON.generate(@rentals)
-      File.write('./rentals.json', save_rental.to_s)
+    @rentals << { date: rental.date, person: rental.person, book: rental.book }
+    save_rental = JSON.generate(@rentals)
+    File.write('./rentals.json', save_rental.to_s)
     puts "Rental created successfully\n"
   end
 
@@ -136,7 +135,7 @@ class Library
     end
 
     rentals.each do |rental|
-      print "Date: #{rental.date}, Book \'#{rental.book.title}\' by #{rental.book.author}\n"
+      print "Date: #{rental[:date]}, Book \'#{rental[:book.title]}\' by #{rental[:book.author]}\n"
     end
   end
 end
