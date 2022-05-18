@@ -4,6 +4,7 @@ require './person_class'
 require './teacher_class'
 require './student_class'
 require './rental'
+require 'json'
 
 class Library
   def initialize
@@ -17,9 +18,8 @@ class Library
       print 'No books in library'
       return
     end
-    @books.each do |book|
-      print "Title: #{book.title.capitalize}, Author: #{book.author.capitalize}\n"
-    end
+    print "Books: #{@books[0]}\n"
+    @books.each { |book| puts "Title: #{book.title}, Author: #{book.author}\n" }
   end
 
   def create_book
@@ -28,7 +28,10 @@ class Library
     print 'Author: '
     author = gets.chomp.capitalize
     book = Book.new(title: title, author: author)
-    @books << book
+    # @books << book
+    @books << { title: book.title, author: book.author }
+    save_book = JSON.generate(@books)
+    File.write('./books.json', save_book.to_s)
     puts "Book created successfully\n"
   end
 
@@ -60,8 +63,10 @@ class Library
       parent_permission = permission_resp.downcase == 'y'
 
       student = Student.new(age: age, classroom: classroom, name: name, parent_permission: parent_permission)
-      @people.push(student)
-
+      # @people.push(student)
+      @people << { Age: student.age, Classroom: student.classroom, Name: student.name }
+      save_teacher = JSON.generate(@people)
+      File.write('./people.json', save_teacher.to_s)
       puts "Person created successfuly\n"
     when '2'
       print 'Age: '
@@ -72,8 +77,10 @@ class Library
       specialization = gets.chomp
 
       teacher = Teacher.new(age: age, specialization: specialization, name: name)
-      @people.push(teacher)
-
+      # @people.push(teacher)
+      @people << { Age: teacher.age, Name: teacher.name}
+      save_teacher = JSON.generate(@people)
+      File.write('./people.json', save_teacher.to_s)
       puts "Person created successfuly\n"
 
     else
@@ -108,8 +115,10 @@ class Library
     date = gets.chomp
 
     rental = Rental.new(date: date, person: person, book: book)
-    @rentals << rental
-
+    # @rentals << rental
+    @rentals << { Date: rental.date, Person: rental.person.name, Book: rental.book.title }
+      save_rental = JSON.generate(@rentals)
+      File.write('./rentals.json', save_rental.to_s)
     puts "Rental created successfully\n"
   end
 
@@ -136,6 +145,9 @@ def main
   puts "Welcome to Library App!\n\n "
   response = nil
   app = Library.new
+  file = File.open('./books.json')
+  file.readlines.map(&:chomp)
+  # File.read("./people.json").split
 
   while response != '7'
     puts 'Please choose an option below :'
