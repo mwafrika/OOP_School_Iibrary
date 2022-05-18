@@ -19,7 +19,7 @@ class Library
       print 'No books in library'
       return
     end
-    @books.collect { |book| puts "Title: #{book[:title]}, Author: #{book[:author]}" }
+    @books.each { |book| puts "Title: #{book.title}, Author: #{book.author}" }
   end
 
   def create_book
@@ -29,8 +29,18 @@ class Library
     author = gets.chomp.capitalize
     book = Book.new(title: title, author: author)
     # @books << book
-    @books << { title: book.title, author: book.author }
-    save_book = JSON.generate(@books)
+    @books << book
+ 
+    save = []
+    
+    @books.each do |book|
+      save << {
+        title: book.title,
+        author: book.author
+      }
+    end
+
+    save_book = JSON.generate(save)
     File.write('./books.json', save_book.to_s)
     puts "Book created successfully\n"
   end
@@ -40,7 +50,7 @@ class Library
       puts 'Your Library is empty'
       return
     end
-    @people.collect { |person| puts "Name: #{person[:name]}, ID: #{person[:id]}, Age: #{person[:age]}\n" }
+    @people.each { |person| puts "Name: #{person.name}, ID: #{person.id}, Age: #{person.age}\n" }
   end
 
   def create_person
@@ -63,8 +73,19 @@ class Library
       student = Student.new(age: age, classroom: classroom, name: name, parent_permission: parent_permission)
       # @people.push(student)
       print student.class
-      @people << { age: student.age, classroom: student.classroom, name: student.name, id: student.id }
-      save_teacher = JSON.generate(@people)
+      @people << student
+
+      save = []
+      @people.each do |person|
+        save << {
+          name: person.name,
+          id: person.id,
+          age: person.age,
+          parent_permission: person.parent_permission,
+        }
+      end
+
+      save_teacher = JSON.generate(save)
       File.write('./people.json', save_teacher.to_s)
       puts "Person created successfuly\n"
     when '2'
@@ -77,8 +98,17 @@ class Library
 
       teacher = Teacher.new(age: age, specialization: specialization, name: name)
       # @people.push(teacher)
-      @people << { age: teacher.age, name: teacher.name, id: teacher.id }
-      save_teacher = JSON.generate(@people)
+      @people.push(teacher)
+      save = []
+      @people.each do |person|
+        save << {
+          name: person.name,
+          id: person.id,
+          age: person.age,
+        }
+      end
+
+      save_teacher = JSON.generate(save)
       File.write('./people.json', save_teacher.to_s)
       puts "Person created successfuly\n"
 
@@ -95,7 +125,7 @@ class Library
     end
     puts 'Select a book by number'
     @books.each_with_index do |book, i|
-      print "#{i}) Title: #{book[:title]}, Author: #{book[:author]}\n"
+      print "#{i}) Title: #{book.title}, Author: #{book.author}\n"
     end
 
     book_index = gets.chomp.to_i
@@ -103,7 +133,7 @@ class Library
 
     puts 'Select a person by number'
     @people.each_with_index do |person, i|
-      print "#{i}) [#{person.class}] Name: #{person[:name]}, ID: #{person[:id]}, Age: #{person[:age]}\n"
+      print "#{i}) [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}\n"
     end
 
     person_index = gets.chomp.to_i
@@ -116,8 +146,17 @@ class Library
     print "check if this exist #{person},#{book}"
     rental = Rental.new(date: date, person: person, book: book)
     # @rentals << rental
-    @rentals << { date: rental.date, person: rental.person, book: rental.book }
-    save_rental = JSON.generate(@rentals)
+    @rentals << rental
+    save = []
+    @rentals.each do |rental|
+      save << {
+        date: rental.date,
+        person: rental.person.name,
+        book: rental.book.title
+      }
+    end
+
+    save_rental = JSON.generate(save)
     File.write('./rentals.json', save_rental.to_s)
     puts "Rental created successfully\n"
   end
@@ -136,7 +175,7 @@ class Library
     end
 
     rentals.each do |rental|
-      print "Date: #{rental[:date]}, Book \'#{rental[:book.title]}\' by #{rental[:book.author]}\n"
+      print "Date: #{rental.date}, Book \'#{rental.book.title}\' by #{rental.book.author}\n"
     end
   end
 end
