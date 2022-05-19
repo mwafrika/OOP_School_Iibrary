@@ -36,3 +36,32 @@ describe 'should handle the reverse word function' do
     end
   end
 end
+
+describe 'should handle the fizzbuzz function' do
+  context 'Should test the cases in the fizzbuzz function' do
+    it 'should return a fizzbuzz if the number is divisible by 3 and 5' do
+      solver = Solver.new
+      expect(solver.fizzbuzz(15)).to eq 'fizzbuzz'
+    end
+    it 'should return a fizz if the number is divisible by 3' do
+      solver = Solver.new
+      expect(solver.fizzbuzz(3)).to eq 'fizz'
+    end
+    it 'should return a buzz if the number is divisible by 5' do
+      solver = Solver.new
+      expect(solver.fizzbuzz(5)).to eq 'buzz'
+    end
+    it 'should return a number if the number is not divisible by 3 or 5' do
+      solver = Solver.new
+      expect(solver.fizzbuzz(7)).to eq 7
+    end
+    it 'should raise an exception if the number is not an integer' do
+      solver = Solver.new
+      expect(solver.fizzbuzz('7')).to raise_error(ArgumentError)
+    end
+    it 'should raise an exception if the number is negative' do
+      solver = Solver.new
+      expect(solver.fizzbuzz(-7)).to raise_error(ArgumentError)
+    end
+  end
+end

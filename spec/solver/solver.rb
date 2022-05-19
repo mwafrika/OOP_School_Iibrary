@@ -6,4 +6,8 @@ class Solver
   def reverse(word)
     word
   end
+
+  def fizzbuzz(number)
+    number
+  end
 end
