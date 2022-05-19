@@ -25,6 +25,12 @@ Before starting the steps below, be sure you have [Git](https://www.linode.com/d
 - Twitter: [@mwafrika](@mwafrikamufung1)
 - LinkedIn: [Mwafrika Mufungizi](https://www.linkedin.com/in/mwafrika-mufungizi/)
 
+👤 **Dire Akanbi**
+
+- GitHub: [@direakanbi](https://github.com/direakanbi)
+- Twitter: [@DireAkanbi](@DireAkanbi)
+- LinkedIn: [Akanbi Dire](https://www.linkedin.com/in/dire-akanbi/)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
