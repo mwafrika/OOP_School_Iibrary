@@ -25,11 +25,17 @@ Before starting the steps below, be sure you have [Git](https://www.linode.com/d
 - Twitter: [@mwafrika](@mwafrikamufung1)
 - LinkedIn: [Mwafrika Mufungizi](https://www.linkedin.com/in/mwafrika-mufungizi/)
 
+👤 **Dire Akanbi**
+
+- LinkedIn: [Akanbi Dire](https://www.linkedin.com/in/dire-akanbi/)
+- Twitter: [@DireAkanbi](@DireAkanbi)
+- GitHub: [@direakanbi](https://github.com/direakanbi)
+
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/mwafrika/OOP_School_Iibrary.git/issues).
+Feel free to check the [issues page](https://github.com/mwafrika/OOP_School_Iibrary/issues).
 
 ## Show your support
 

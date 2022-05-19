@@ -2,7 +2,7 @@ require './trimmer_decorator'
 require './rental'
 
 class Person
-  attr_accessor :name, :age, :rentals
+  attr_accessor :name, :age, :rentals, :parent_permission
   attr_reader :id
 
   def initialize(age:, name: 'Unknown', parent_permission: true)
@@ -37,6 +37,6 @@ class Person
   end
 
   def add_rental(date, book)
-    Rental.new(date, self, book)
+    Rental.new(date, book, self)
   end
 end
