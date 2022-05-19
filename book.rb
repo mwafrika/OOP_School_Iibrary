@@ -1,5 +1,4 @@
 require_relative 'rental'
-require 'pry'
 
 class Book
   attr_accessor :title, :author, :rentals
