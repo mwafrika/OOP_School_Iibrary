@@ -1,12 +1,7 @@
-# Create a method called factorial that takes one argument, an integer N,
-# and returns the factorial for that number. The factorial is the multiplication of all integers
-# from 1 to N and has the special case that the factorial of 0 is 1. This method only accepts 0 and positive integers,
-# so if a negative integer is given it should raise an exception.
-
 require_relative 'solver'
 
-describe 'Should test the solver funtcionss' do
-  context 'Should test all the functions in the Solver class' do
+describe 'Should handle the factorial of a number' do
+  context 'Should test all the cases in the factorial' do
     it 'should return the factorial of the number' do
       solver = Solver.new
       expect(solver.factorial(5)).to eq 120
@@ -25,6 +20,19 @@ describe 'Should test the solver funtcionss' do
     it 'should raise an exception if the number is negative' do
       solver = Solver.new
       expect(solver.positive_integer?(-5)).to raise_error(ArgumentError)
+    end
+  end
+end
+
+describe 'should handle the reverse word function' do
+  context 'Should test the cases in the reverse function' do
+    it 'should return a reversed string' do
+      solver = Solver.new
+      expect(solver.reverse('hello')).to eq 'olleh'
+    end
+    it 'should return only a string' do
+      solver = Solver.new
+      expect(solver.reverse?(3333)).to raise_error(ArgumentError)
     end
   end
 end
