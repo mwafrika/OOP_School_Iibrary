@@ -6,7 +6,6 @@ require './student_class'
 require './rental'
 require './modules'
 require 'json'
-require 'pry'
 
 def main
   puts "Welcome to Library App!\n\n "
