@@ -10,8 +10,8 @@
 
 ## Getting Started
 
-To get the content of this project locally you need to run these commands in your terminal.
-Before starting the steps below, be sure you have [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/).
+To get the content of this project locally you need to run these commands below in your terminal.
+Before starting the steps below, be sure you have [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/) installed.
 
 1. Download the `Zip` or clone it with `git clone https://github.com/mwafrika/OOP_School_Iibrary.git`
 2. `cd OOP_School_Iibrary`
